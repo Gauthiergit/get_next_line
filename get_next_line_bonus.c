@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:04:18 by gpeyre            #+#    #+#             */
-/*   Updated: 2023/10/26 16:37:27 by gpeyre           ###   ########.fr       */
+/*   Updated: 2023/10/27 11:42:53 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			nb_read;
 
-	if (fd < 0 || BUFFER_SIZE < 1 || fd > MAX_FD)
-		return (NULL);
+	if (fd < 0 || BUFFER_SIZE < 1 || fd > MAX_FD || read(fd, 0, 0))
+		return (free(stash[fd]), stash[fd] = NULL, NULL);
 	nb_read = read_fd(fd, &stash[fd]);
 	if (nb_read == -1)
 		return (NULL);
