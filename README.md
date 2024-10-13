@@ -1,1 +1,1 @@
-Cette fonction utilise un descripteur de fichier pour lire dans un fichier texte et afficher une seule ligne du texte a chaque appel de la fonction. 
+"Whether it’s a file, stdin (standard input), or even later a network connection, a developer always needs a way to read content line by line. The objective of this project is to work on a program that enables this kind of reading, a program that will be useful to students throughout their studies."
